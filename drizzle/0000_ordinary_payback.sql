@@ -1,5 +1,5 @@
 CREATE TABLE "projects" (
-	"id" text PRIMARY KEY NOT NULL,
+	"id" serial PRIMARY KEY NOT NULL,
 	"slug" text NOT NULL,
 	"title" text NOT NULL,
 	"description" text NOT NULL,
