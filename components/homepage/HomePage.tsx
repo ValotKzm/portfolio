@@ -2,6 +2,7 @@
 // sans utiliser motion ni styles, maintenant avec Tailwind et transition d'opacité en fondu
 "use client"
 import React from "react";
+import DecryptedText from "./DecryptedText";
 
 const descriptionLines = [
     "Développeur Full-Stack passionné.",
@@ -23,6 +24,8 @@ export default function HomePage() {
     return (
         <div className="p-8 font-sans">
             <h1 className="text-4xl mb-4">
+                <DecryptedText text="Yannick Souza" sequential={true} revealDirection="center" animateOn="view" speed={90}
+/>
                 Yannick Souza
             </h1>
             <div className="text-xl leading-relaxed">
