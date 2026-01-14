@@ -4,6 +4,7 @@
 import React from "react";
 import DecryptedText from "./DecryptedText";
 import FuzzyText from './FuzzyText';
+import { DisplayProjects } from "./DisplayProjects";
 
 const descriptionLines = [
     "Développeur Fullstack – Spécialisé Backend & NLP",
@@ -51,7 +52,7 @@ export default function HomePage() {
     return (
         <div className="relative min-h-screen max-h-screen bg-black text-white">
             {/* Loading Screen */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100' : 'opacity-0'} duration-1000 ease-in-out ${isLoading ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100, z-10' : 'opacity-0, -z-10'}`}>
                 <FuzzyText 
                     baseIntensity={0.2}
                     hoverIntensity={1} 
@@ -92,42 +93,16 @@ export default function HomePage() {
                         })}
                     </div>
                         <div className="mb-30">
-                            <a href="#projects" className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors">
+                            <button 
+                                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors"
+                            >
                                 Voir mes projets
-                            </a>
+                            </button>
                         </div>
                 </div>
             </div>
-            <div id="projects" className="h-screen bg-gray-900 text-white flex flex-col items-center justify-center">
-                <h2 className="text-4xl mb-8">Mes Projets</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl px-8">
-                    {/* Placeholder projects */}
-                    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <h3 className="text-xl mb-2">Projet 1</h3>
-                        <p>Description du projet 1. Technologies utilisées, etc.</p>
-                    </div>
-                    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <h3 className="text-xl mb-2">Projet 2</h3>
-                        <p>Description du projet 2. Technologies utilisées, etc.</p>
-                    </div>
-                    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <h3 className="text-xl mb-2">Projet 3</h3>
-                        <p>Description du projet 3. Technologies utilisées, etc.</p>
-                    </div>
-                    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <h3 className="text-xl mb-2">Projet 4</h3>
-                        <p>Description du projet 4. Technologies utilisées, etc.</p>
-                    </div>
-                    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <h3 className="text-xl mb-2">Projet 5</h3>
-                        <p>Description du projet 5. Technologies utilisées, etc.</p>
-                    </div>
-                    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors">
-                        <h3 className="text-xl mb-2">Projet 6</h3>
-                        <p>Description du projet 6. Technologies utilisées, etc.</p>
-                    </div>
-                </div>
-            </div>
+            {!isLoading && <DisplayProjects/>}
         </div>
     );
 }
