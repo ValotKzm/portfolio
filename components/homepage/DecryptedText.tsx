@@ -12,7 +12,7 @@ interface DecryptedTextProps extends HTMLMotionProps<'span'> {
   className?: string;
   encryptedClassName?: string;
   parentClassName?: string;
-  animateOn?: 'view' | 'hover' | 'both';
+  animateOn?: 'start' | 'view' | 'hover' | 'both';
 }
 
 export default function DecryptedText({
@@ -172,6 +172,12 @@ export default function DecryptedText({
       if (currentRef) observer.unobserve(currentRef);
     };
   }, [animateOn, hasAnimated]);
+
+  useEffect(() => {
+    if (animateOn === 'start') {
+      setIsHovering(true);
+    }
+  }, [animateOn]);
 
   const hoverProps =
     animateOn === 'hover' || animateOn === 'both'
