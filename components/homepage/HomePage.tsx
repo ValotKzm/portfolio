@@ -5,6 +5,7 @@ import React from "react";
 import DecryptedText from "./DecryptedText";
 import FuzzyText from './FuzzyText';
 import { DisplayProjects } from "./DisplayProjects";
+import { ProjectCard } from "./ProjectCard";
 
 const descriptionLines = [
     "Développeur Fullstack – Spécialisé Backend & NLP",
