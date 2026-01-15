@@ -5,7 +5,8 @@ import React from "react";
 import DecryptedText from "./DecryptedText";
 import FuzzyText from './FuzzyText';
 import { DisplayProjects } from "./DisplayProjects";
-import { ProjectCard } from "./ProjectCard";
+import DarkVeil from './DarkVeil';
+import GradientText from "../GradientText";
 
 const descriptionLines = [
     "Développeur Fullstack – Spécialisé Backend & NLP",
@@ -51,9 +52,10 @@ export default function HomePage() {
     }, [isLoading]);
 
     return (
-        <div className="relative min-h-screen max-h-screen bg-black text-white">
+
+        <div className="relative min-h-screen max-h-screen bg-black text-white overflow-x-hidden">
             {/* Loading Screen */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100, z-10' : 'opacity-0, -z-10'}`}>
+            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100 z-10' : 'opacity-0 -z-10'}`}>
                 <FuzzyText 
                     baseIntensity={0.2}
                     hoverIntensity={1} 
@@ -72,10 +74,18 @@ export default function HomePage() {
             </div>
 
             {/* Main Content */}
-            <div className={`transition-opacity duration-1000 ease-in-out ${!isLoading ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="p-8 font-sans flex flex-col items-center justify-between h-screen">
+            <div className={`transition-opacity duration-1000 ease-in-out z-10 ${!isLoading ? 'opacity-100' : 'opacity-0'}`}>
+                <div className="w-full h-full absolute">
+                    <DarkVeil hueShift={30}/>
+                </div>
+                <div className="p-8 font-sans flex flex-col items-center justify-between h-screen relative z-10">
                     <h1 className="text-4xl mb-12">
-                        {!isLoading && <DecryptedText text="Yannick Souza" sequential={true} revealDirection="center" animateOn="start" speed={90} />}
+                        {/* <GradientText colors={["#5227FF","#000000","#009dff"]}> */}
+                        {!isLoading &&
+                            <DecryptedText text="Yannick Souza" sequential={true} revealDirection="center" animateOn="start" speed={90} />
+                        }
+
+                        {/* </GradientText> */}
                         
                     </h1>
                     <div className="leading-relaxed text-center max-w-2xl">
