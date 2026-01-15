@@ -34,7 +34,7 @@ export default function HomePage() {
                 }
                 return prev + getRandomIntInclusive(0,3); // augmenter de 2% toutes les 50ms environ
             });
-        }, 50);
+        }, 10);
 
         return () => clearInterval(interval);
     }, []);
