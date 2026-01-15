@@ -61,7 +61,7 @@ export default function HomePage() {
                     hoverIntensity={1} 
                     enableHover={true}
                     color={"#54C3EA"}
-                    fontSize="4rem"
+                    fontSize="clamp(2rem, 8vw, 4rem)"
                 >
                     Loading...
                 </FuzzyText>
@@ -78,8 +78,8 @@ export default function HomePage() {
                 <div className="w-full h-full absolute">
                     <DarkVeil hueShift={30}/>
                 </div>
-                <div className="p-8 font-sans flex flex-col items-center justify-between h-screen relative z-10">
-                    <h1 className="text-4xl mb-12">
+                <div className="p-4 md:p-8 font-sans flex flex-col items-center justify-between h-screen relative z-10">
+                    <h1 className="text-3xl md:text-4xl mb-8 md:mb-12">
                         {/* <GradientText colors={["#5227FF","#000000","#009dff"]}> */}
                         {!isLoading &&
                             <DecryptedText text="Yannick Souza" sequential={true} revealDirection="center" animateOn="start" speed={90} />
@@ -88,13 +88,13 @@ export default function HomePage() {
                         {/* </GradientText> */}
                         
                     </h1>
-                    <div className="leading-relaxed text-center max-w-2xl">
+                    <div className="leading-relaxed text-center max-w-2xl px-4">
                         {descriptionLines.map((line, index) => {
-                            const sizeClasses = ['text-3xl', 'text-2xl', 'text-l'];
+                            const sizeClasses = ['text-xl md:text-3xl', 'text-lg md:text-2xl', 'text-base md:text-l'];
                             return (
                                 <p 
                                 key={index} 
-                                className={`${sizeClasses[index] || 'text-xl'} mb-6 transition-all duration-500 ease-in-out ${
+                                className={`${sizeClasses[index] || 'text-sm md:text-base'} mb-4 md:mb-6 transition-all duration-500 ease-in-out ${
                                     visibleLines.includes(line) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                                 }`}
                                 >
@@ -103,10 +103,10 @@ export default function HomePage() {
                             );
                         })}
                     </div>
-                        <div className="mb-30">
+                        <div className="mb-20 md:mb-32">
                             <button 
                                 onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition-colors"
+                                className="bg-white text-black px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-gray-200 transition-colors text-sm md:text-base"
                             >
                                 Voir mes projets
                             </button>
