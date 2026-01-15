@@ -33,7 +33,7 @@ export const ProjectCard = ({project}:{project: Project}) => {
                     {project.thumbnail && (
                         <div className="mb-4">
                             <h3 className="text-lg md:text-xl mb-2">Thumbnail</h3>
-                            <img src={project.thumbnail ?? undefined} alt={project.title} className="w-full h-32 md:h-48 object-cover rounded" />
+                            <img src={project.thumbnail ?? undefined} alt={project.title} className="w-full h-full object-cover rounded" />
                         </div>
                     )}
                 </div>
