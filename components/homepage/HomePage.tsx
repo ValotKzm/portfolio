@@ -55,7 +55,7 @@ export default function HomePage() {
 
         <div className="relative min-h-screen max-h-screen bg-black text-white overflow-x-hidden">
             {/* Loading Screen */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100 z-10' : 'opacity-0 -z-10'}`}>
+            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100 z-60' : 'opacity-0 -z-10'}`}>
                 <FuzzyText 
                     baseIntensity={0.2}
                     hoverIntensity={1} 
