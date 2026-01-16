@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Yannick Souza",
+  title: "Portfolio - Yannick Souza",
   description: "Portfolio de Yannick Souza",
 };
 

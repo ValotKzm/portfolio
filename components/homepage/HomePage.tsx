@@ -78,7 +78,7 @@ export default function HomePage() {
                 <div className="w-full h-full absolute">
                     <DarkVeil hueShift={30}/>
                 </div>
-                <div className="p-4 md:p-8 font-sans flex flex-col items-center justify-between h-screen relative z-10">
+                <div className="p-4 md:p-8 flex flex-col items-center justify-between h-screen relative z-10">
                     <h1 className="text-3xl md:text-4xl mb-8 md:mb-12">
                         {/* <GradientText colors={["#5227FF","#000000","#009dff"]}> */}
                         {!isLoading &&
