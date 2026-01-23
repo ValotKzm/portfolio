@@ -16,7 +16,7 @@ export const ProjectCard = ({project}:{project: Project}) => {
                 <button onClick={() => setIsOpen(true)} className="absolute bottom-4 left-4 px-3 py-2 md:px-4 md:py-2 bg-[#54C3EA] text-white rounded hover:bg-[#3b8ba8] text-sm md:text-base">Détails</button>
             </div>
 
-            <div className={`fixed top-0 left-0 h-screen w-screen bg-gray-800 text-white flex flex-col items-center justify-center transition-transform duration-500 ease-in-out z-50 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+            <div className={`fixed top-0 left-0 h-[calc(100vh-2rem)] md:h-[calc(100vh-4rem)] w-screen bg-gray-800 text-white flex flex-col items-center justify-center transition-transform duration-500 ease-in-out z-50 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <button onClick={() => { setIsOpen(false); document.getElementById('projects')?.scrollIntoView(); }} className="absolute top-4 right-4 text-white text-2xl">&times;</button>
                 <div className="p-4 md:p-8 max-w-4xl w-full h-full overflow-y-auto">
                     <h2 className="text-2xl md:text-3xl mb-4">{project.title}</h2>
