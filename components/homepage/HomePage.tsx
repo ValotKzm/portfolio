@@ -1,119 +1,61 @@
-// création d'une homepage de portfolio simple avec Next.js et TypeScript avec un petit effet stagger pour mon descriptif
-// sans utiliser motion ni styles, maintenant avec Tailwind et transition d'opacité en fondu
-"use client"
-import React from "react";
-import DecryptedText from "./DecryptedText";
-import FuzzyText from './FuzzyText';
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import { DisplayProjects } from "./DisplayProjects";
-import DarkVeil from './DarkVeil';
-import GradientText from "../GradientText";
-
-const descriptionLines = [
-    "Développeur Fullstack – Spécialisé Backend & NLP",
-    "Master en Traitement Automatique des Langues, actuellement en formation développeur fullstack, à la recherche d’une alternance.",
-    "Diplômé d’un master en Traitement Automatique des Langues, j’ai développé une forte appétence pour le développement logiciel et les systèmes backend. Actuellement en école de développement fullstack, je recherche une alternance en développement fullstack, backend ou frontend, avec un intérêt particulier pour les applications data et IA.",
-];
-
-function getRandomIntInclusive(min:number, max:number) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 export default function HomePage() {
-    const [visibleLines, setVisibleLines] = React.useState<string[]>([]);
-    const [isLoading, setIsLoading] = React.useState(true);
-    const [progress, setProgress] = React.useState(0);
-
-    React.useEffect(() => {
-        // Simuler un délai de chargement avec progression
-        const interval = setInterval(() => {
-            setProgress((prev) => {
-                if (prev >= 100) {
-                    clearInterval(interval);
-                    setIsLoading(false);
-                    return 100;
-                }
-                return prev + getRandomIntInclusive(0,3); // augmenter de 2% toutes les 50ms environ
-            });
-        }, 10);
-
-        return () => clearInterval(interval);
-    }, []);
-
-    React.useEffect(() => {
-        if (!isLoading) {
-            descriptionLines.forEach((line, index) => {
-                setTimeout(() => {
-                    setVisibleLines((prev) => [...prev, line]);
-                }, index * 500); // délai de 500ms entre chaque ligne
-            });
-        }
-    }, [isLoading]);
-
     return (
+        <div className="portfolio-page">
+            <section className="hero-section" aria-labelledby="hero-title">
+                <header className="site-header">
+                    <a className="site-mark" href="#top" aria-label="Yannick Souza, accueil">
+                        <span className="site-mark-initials" aria-hidden="true">YS</span>
+                        <span className="site-mark-label">Portfolio</span>
+                    </a>
+                    <nav className="site-nav" aria-label="Navigation principale">
+                        <a href="#projects">Projets <ArrowDownRight size={16} aria-hidden="true" /></a>
+                        <a href="#contact">Contact <ArrowUpRight size={16} aria-hidden="true" /></a>
+                    </nav>
+                </header>
 
-        <div className="relative min-h-screen max-h-screen bg-black text-white overflow-x-hidden">
-            {/* Loading Screen */}
-            <div className={`absolute inset-0 flex flex-col items-center justify-center bg-black text-white transition-opacity duration-1000 ease-in-out ${isLoading ? 'opacity-100 z-60' : 'opacity-0 -z-10'}`}>
-                <FuzzyText 
-                    baseIntensity={0.2}
-                    hoverIntensity={1} 
-                    enableHover={true}
-                    color={"#54C3EA"}
-                    fontSize="clamp(2rem, 8vw, 4rem)"
-                >
-                    Loading...
-                </FuzzyText>
-                <div className="mt-8 w-64">
-                    <div className="w-full bg-gray-700 rounded-full h-2.5">
-                        <div className="bg-white h-2.5 rounded-full transition-all duration-100 ease-out" style={{width: `${progress}%`}}></div>
+                <div className="hero-inner" id="top">
+                    <div className="hero-name">
+                        <h1 id="hero-title">
+                            <span>Yannick</span>
+                            <span className="hero-surname">Souza</span>
+                        </h1>
                     </div>
-                    <p className="mt-2 text-center">{progress}%</p>
-                </div>
-            </div>
-
-            {/* Main Content */}
-            <div className={`transition-opacity duration-1000 ease-in-out z-10 ${!isLoading ? 'opacity-100' : 'opacity-0'}`}>
-                <div className="w-full h-full absolute">
-                    <DarkVeil hueShift={30}/>
-                </div>
-                <div className="p-4 md:p-8 flex flex-col items-center justify-between h-screen relative z-10">
-                    <h1 className="text-3xl md:text-4xl mb-8 md:mb-12">
-                        {/* <GradientText colors={["#5227FF","#000000","#009dff"]}> */}
-                        {!isLoading &&
-                            <DecryptedText text="Yannick Souza" sequential={true} revealDirection="center" animateOn="start" speed={90} />
-                        }
-
-                        {/* </GradientText> */}
-                        
-                    </h1>
-                    <div className="leading-relaxed text-center max-w-2xl px-4">
-                        {descriptionLines.map((line, index) => {
-                            const sizeClasses = ['text-xl md:text-3xl', 'text-lg md:text-2xl', 'text-base md:text-l'];
-                            return (
-                                <p 
-                                key={index} 
-                                className={`${sizeClasses[index] || 'text-sm md:text-base'} mb-4 md:mb-6 transition-all duration-500 ease-in-out ${
-                                    visibleLines.includes(line) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                                }`}
-                                >
-                                    {line}
-                                </p>
-                            );
-                        })}
-                    </div>
-                        <div className="mb-20 md:mb-32">
-                            <button 
-                                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="bg-white text-black px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-gray-200 transition-colors text-sm md:text-base"
-                            >
-                                Voir mes projets
-                            </button>
+                    <div className="hero-copy">
+                        <p className="hero-role">Développeur Fullstack – Spécialisé Backend &amp; NLP</p>
+                        <p className="hero-intro">
+                            Master en Traitement Automatique des Langues, actuellement en formation développeur fullstack, à la recherche d’une alternance.
+                        </p>
+                        <div className="hero-actions">
+                            <a className="button-primary" href="#projects">
+                                Voir mes projets <ArrowDownRight size={18} aria-hidden="true" />
+                            </a>
+                            <a className="text-link" href="mailto:yannick.souza@hotmail.com">
+                                Me contacter <ArrowUpRight size={16} aria-hidden="true" />
+                            </a>
                         </div>
+                    </div>
+                    <div className="hero-topics" aria-label="Domaines d’intérêt">
+                        <span className="hero-topics-label">Domaines</span>
+                        <span>Backend</span>
+                        <span>NLP</span>
+                        <span>Applications data &amp; IA</span>
+                    </div>
                 </div>
-            </div>
-            {!isLoading && <DisplayProjects/>}
+            </section>
+
+            <DisplayProjects />
+
+            <section className="profile-section" aria-labelledby="profile-title">
+                <div className="profile-inner">
+                    <h2 id="profile-title">Parcours</h2>
+                    <p className="profile-detail">
+                        Diplômé d’un master en Traitement Automatique des Langues, j’ai développé une forte appétence pour le développement logiciel et les systèmes backend. Actuellement en école de développement fullstack, je recherche une alternance en développement fullstack, backend ou frontend, avec un intérêt particulier pour les applications data et IA.
+                    </p>
+                </div>
+            </section>
         </div>
     );
 }

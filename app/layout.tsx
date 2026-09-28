@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Azeret_Mono } from "next/font/google";
+import "./catalog.css";
 import Footer from "../components/Footer";
+
+const interfaceFont = Azeret_Mono({
+  variable: "--font-ui",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Portfolio - Yannick Souza",
@@ -14,12 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="min-h-screen flex flex-col">
-        <div className="grow">
-          {children}
-        </div>
+      <body className={`${interfaceFont.variable} flex min-h-screen flex-col`}>
+        <main className="grow">{children}</main>
         <Footer />
-      </body>
+      {/* impeccable-live-start */}
+<script src="http://localhost:8400/live.js?token=205574ef-728e-4446-aad9-d75abdd6fa0c"></script>
+{/* impeccable-live-end */}
+</body>
     </html>
   );
 }
