@@ -24,9 +24,6 @@ export default function RootLayout({
       <body className={`${interfaceFont.variable} flex min-h-screen flex-col`}>
         <main className="grow">{children}</main>
         <Footer />
-      {/* impeccable-live-start */}
-<script src="http://localhost:8400/live.js?token=205574ef-728e-4446-aad9-d75abdd6fa0c"></script>
-{/* impeccable-live-end */}
 </body>
     </html>
   );
