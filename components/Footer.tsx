@@ -1,10 +1,19 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="site-footer" id="contact">
       <div className="footer-inner">
-        <p className="footer-copy">© 2026 Yannick Souza. Tous droits réservés.</p>
+        <div className="footer-brand">
+          <Image
+            className="footer-logo"
+            src="/brand/logo-ys-cyan.webp"
+            alt="Logo Yannick Souza"
+            width={312}
+            height={640}
+          />
+        </div>
         <nav className="footer-links" aria-label="Liens de contact">
           <a
             href="https://www.linkedin.com/in/yannick-souza"
@@ -29,6 +38,7 @@ export default function Footer() {
             <span>Email</span>
           </a>
         </nav>
+        <p className="footer-copy">© 2026 Yannick Souza. Tous droits réservés.</p>
       </div>
     </footer>
   );

@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { getProject } from "@/app/actions/getProjects";
 import { projects } from "@/lib/db/schema";
+import { Ornament } from "./Ornament";
 import { ProjectCard } from "./ProjectCard";
 
 type Project = typeof projects.$inferSelect;
@@ -42,6 +43,7 @@ export const DisplayProjects = () => {
                     <h2 id="projects-title">Mes projets</h2>
                     <p>Quelques projets que j’ai réalisés ou que je développe.</p>
                 </div>
+                <Ornament />
                 {loading ? (
                     <p className="projects-state" role="status">Chargement des projets…</p>
                 ) : hasError ? (
