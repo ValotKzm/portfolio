@@ -201,6 +201,7 @@ export const HeroEye = () => {
             <div className="hero-eye-body">
                 <Image className="hero-eye-art" src={EYE_SRC} alt="" width={571} height={1000} priority />
                 <div className="hero-eye-socket">
+                    <span className="hero-eye-globe" />
                     <Image className="hero-eye-iris" src="/brand/logo-eye-iris.webp" alt="" width={408} height={408} priority />
                 </div>
             </div>
