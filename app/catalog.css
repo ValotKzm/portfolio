@@ -296,11 +296,28 @@ summary:focus-visible,
 
 .hero-eye-iris {
   position: relative;
-  display: block;
   width: 100%;
   height: 100%;
   mask-image: radial-gradient(circle, #000 64%, transparent 97%);
   transform: translate(calc(var(--look-x) * 13%), calc(var(--look-y) * 11%));
+}
+
+.hero-eye-iris-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* La version animée recouvre l'image fixe dès que le shader est prêt. */
+.hero-eye-iris-fire {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
+}
+
+.hero-eye[data-iris="on"] .hero-eye-iris-fire {
+  opacity: 1;
 }
 
 .hero-topics {
