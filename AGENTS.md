@@ -3,7 +3,7 @@
 ## Projet
 
 - Portfolio personnel construit avec Next.js 16 (App Router), React 19 et TypeScript.
-- Styles avec Tailwind CSS 4; animations avec `motion`; icones avec `lucide-react`.
+- Styles avec Tailwind CSS 4; icones avec `lucide-react`; rendu WebGL avec `ogl`.
 - Donnees PostgreSQL via Neon et Drizzle ORM. Le schema est dans `lib/db/schema.ts`; les migrations sont dans `drizzle/`.
 - L'interface est en francais (`app/layout.tsx` declare `lang="fr"`). Conserver cette langue pour les textes visibles, sauf demande contraire.
 - Utiliser `pnpm`, comme l'indique le fichier `pnpm-lock.yaml`.

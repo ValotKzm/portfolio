@@ -43,8 +43,7 @@ Les miniatures sont des URL arbitraires stockées en base : `ProjectCard` utilis
 
 - La feuille active est `app/catalog.css`, importée par `app/layout.tsx`. Elle importe Tailwind 4, déclare les tokens (`--ink`, `--surface`, `--paper`, `--accent`, `--line`, …) et les mappe sur le thème Tailwind via `@theme inline`.
 - La mise en page repose surtout sur des **classes sémantiques** définies dans `catalog.css` (`hero-section`, `projects-grid`, `project-card`, `site-footer`, …), pas sur des utilitaires Tailwind dans le JSX. Pour changer l'apparence d'un composant, modifier `catalog.css`.
-- `app/globals.css` n'est importé nulle part (ancien thème shadcn, en grande partie commenté). `components.json` pointe encore dessus : la CLI shadcn écrirait donc dans un fichier inutilisé.
-- `components/GradientText.tsx` et `components/homepage/{DarkVeil,DecryptedText,FuzzyText}.tsx` (issus de React Bits, registre `@react-bits` dans `components.json`) ne sont plus utilisés par la page depuis la refonte du design. `ogl` et `motion` ne servent qu'à eux.
+- `ogl` sert au rendu WebGL de `components/homepage/HeroEye.tsx` (flammes et iris animé).
 
 ### Design et contenu
 
