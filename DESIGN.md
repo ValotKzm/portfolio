@@ -1,15 +1,17 @@
 ---
 name: Portfolio Yannick Souza
-description: Developer portfolio presented as a no-green, focus-led project catalog.
+description: Sober dark portfolio led by a cyan gothic emblem, an eye that watches the visitor.
 colors:
-  screen-black: "#101116"
-  surface: "#17191f"
-  surface-raised: "#1d2028"
-  paper-white: "#f2f0e8"
-  muted-white: "rgb(242 240 232 / 76%)"
-  focus-cyan: "#4ac6d9"
-  rule: "rgb(242 240 232 / 22%)"
-  rule-strong: "rgb(242 240 232 / 54%)"
+  ink: "#0a0f14"
+  surface: "#111920"
+  surface-raised: "#17222b"
+  socket-black: "#02060c"
+  paper: "#e8e8e8"
+  muted: "rgb(232 232 232 / 76%)"
+  cyan: "#4ac6d9"
+  line: "rgb(74 198 217 / 32%)"
+  line-quiet: "rgb(232 232 232 / 15%)"
+  line-strong: "rgb(232 232 232 / 54%)"
 typography:
   display:
     fontFamily: "Azeret Mono, monospace"
@@ -35,213 +37,203 @@ typography:
     lineHeight: 1.15
   headline-mobile:
     fontFamily: "Azeret Mono, monospace"
-    fontSize: "1.5rem"
-    fontWeight: 700
-  profile-heading:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "1.55rem"
-    fontWeight: 700
-    lineHeight: 1.2
-  profile-heading-mobile:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "1.35rem"
+    fontSize: "1.6rem"
     fontWeight: 700
   title:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.94rem"
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "1.02rem"
     fontWeight: 700
-    lineHeight: 1.45
+    lineHeight: 1.4
   body:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.88rem"
-    fontWeight: 400
-    lineHeight: 1.75
-  body-compact:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.78rem"
-    fontWeight: 400
-    lineHeight: 1.8
-  label:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.78rem"
-    fontWeight: 700
-  nav:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.72rem"
-    fontWeight: 700
-  caption:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.68rem"
-    fontWeight: 700
-  fine:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.64rem"
-    fontWeight: 400
-  fine-mobile:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.62rem"
-    fontWeight: 400
-  fine-small:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.62rem"
-    fontWeight: 400
-  tile-meta:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.72rem"
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.7
-  stack-label:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.66rem"
-    fontWeight: 700
-  card-action:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.68rem"
-    fontWeight: 700
-  card-action-small:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.7rem"
-    fontWeight: 700
-  card-action-mobile:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.64rem"
-    fontWeight: 700
-  section-caption:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.68rem"
+  body-compact:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "0.86rem"
     fontWeight: 400
-  section-caption-mobile:
-    fontFamily: "Azeret Mono, monospace"
-    fontSize: "0.62rem"
+    lineHeight: 1.65
+  role:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "0.8rem"
+    fontWeight: 600
+    lineHeight: 1.6
+    letterSpacing: "0.22em"
+  label:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "0.76rem"
+    fontWeight: 600
+    letterSpacing: "0.14em"
+  label-small:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "0.72rem"
+    fontWeight: 700
+    letterSpacing: "0.16em"
+  caption:
+    fontFamily: "Montserrat, sans-serif"
+    fontSize: "0.78rem"
     fontWeight: 400
 rounded:
-  card: "4px"
-  control: "0px"
+  base: "2px"
 spacing:
   desktop-gutter: "32px"
   tablet-gutter: "20px"
   mobile-gutter: "18px"
-  rail-gap: "14px"
+  hero-gap: "32px"
+  rail-gap: "16px"
   rail-gap-mobile: "12px"
-  section-top: "38px"
-  section-top-mobile: "30px"
-  tile-padding: "14px"
-  tile-padding-mobile: "12px"
-  content-compact: "12px"
+  section-block: "56px"
+  section-block-mobile: "40px"
+  tile-padding: "14px 16px"
+  tile-padding-mobile: "12px 14px"
 components:
   button-primary:
     backgroundColor: "transparent"
-    textColor: "{colors.paper-white}"
-    rounded: "{rounded.control}"
-    padding: "0 12px"
-    height: "42px"
+    textColor: "{colors.paper}"
+    typography: "{typography.label}"
+    rounded: "{rounded.base}"
+    padding: "0 18px"
+    height: "46px"
   button-primary-hover:
-    backgroundColor: "{colors.focus-cyan}"
-    textColor: "{colors.screen-black}"
+    backgroundColor: "{colors.cyan}"
+    textColor: "{colors.ink}"
+  text-link:
+    textColor: "{colors.paper}"
+    typography: "{typography.label}"
+  text-link-hover:
+    textColor: "{colors.cyan}"
   project-card:
     backgroundColor: "{colors.surface}"
-    rounded: "{rounded.card}"
+    rounded: "{rounded.base}"
     padding: "{spacing.tile-padding}"
+  hero-eye:
+    height: "min(48vw, 500px)"
+  hero-eye-mobile:
+    height: "230px"
 ---
 
 # Design System: Portfolio Yannick Souza
 
 ## Overview
 
-**Creative North Star: "The Project Catalog Wall"**
+**Creative North Star: "The Watchful Sigil"**
 
-The portfolio borrows the focus-led rhythm of an artwork catalog and gives it an open-source maintainer's discipline: real project previews first, then the facts needed to inspect each one. The dark neutral work surface recedes behind full-color project imagery; precise monospaced labels keep the maker identity present without turning the page into a simulated terminal.
+The page is a quiet, near-black sheet with one living thing on it: a cyan gothic emblem whose eye follows the visitor. Everything else stays sober so that the emblem can carry the identity. The text column says who Yannick is and what he builds; the emblem gives the page a face.
 
-The cyan focus color is the only interface accent. There is no green, no glow, and no invented rating, popularity, repository activity, command output, or security state. Project selection is real navigation and disclosure, not a game mechanic.
+The look comes from a personal graphic charter (a gothic emblem and monogram), reinterpreted rather than pasted in: cyan instead of the charter's red, thin cyan hairlines, a four-point star as the only ornament, and clean sans-serif reading text. Gothic lettering is not used for text; it proved unreadable.
 
 **Key Characteristics:**
-- Deep neutral screen with full-color project artwork as the main color source.
-- Azeret Mono throughout, with hierarchy carried by scale and weight.
-- One cyan focus accent, quiet borders, and compact catalog tiles.
-- Real project details, stacks, repository/demo links, and contact remain intact.
+- Blue-black ground, soft white text, cyan as the single accent.
+- One animated signature piece (the eye) and otherwise very little motion.
+- Azeret Mono for the name and section titles, Montserrat for everything that is read.
+- Thin rules and a small star ornament instead of boxes, shadows or panels.
+- Real project previews, stacks and links; nothing invented.
 
 ## Colors
 
-The interface is a dark neutral frame for authentic project artwork, with one cyan accent reserved for focus, selected work, and active links.
+A blue-tinted black frame with a single cyan voice, taken from the emblem itself.
 
 ### Primary
-- **Focus cyan**: keyboard focus, selected-tile border, and active project links.
+- **Cyan**: the role line under the name, button borders, hover and focus states, the star ornament, the scrollbar thumb and text selection.
+- **Cyan line**: the same cyan at low opacity, for the rules that frame the topics strip, the ornament and the footer.
 
 ### Neutral
-- **Screen black**: page and horizontal gallery ground.
-- **Work surface**: project tile body.
-- **Raised surface**: media placeholders and restrained raised states.
-- **Paper white**: primary copy and titles.
-- **Muted white**: secondary descriptions on dark surfaces.
-- **Quiet rule**: card boundaries and section separators.
-- **Strong rule**: brand mark and controls.
+- **Ink**: page ground, hero, project section and footer.
+- **Surface**: project tile body and the profile section band.
+- **Raised surface**: project media placeholder.
+- **Socket black**: the inside of the eye socket only, behind the globe.
+- **Paper**: titles and primary text.
+- **Muted**: descriptions, intro copy, secondary labels.
+- **Quiet line**: tile borders and inner separators.
+- **Strong line**: reserved for stronger neutral outlines; not currently applied.
 
-**The Real-Artwork Rule.** Project thumbnails supply the page's broad color; don't recolor, tint, blur, or replace genuine previews with synthetic poster art.
+**The One Cyan Rule.** Cyan is the only accent. No second hue, no red version of the emblem on the site, no green.
 
-**The No-Green Rule.** Keep green out of interface tokens, active states, and decorative effects.
+**The Real-Artwork Rule.** Project thumbnails are shown as they are; don't tint, blur or replace them.
 
 ## Typography
 
-**Display Font:** Azeret Mono (with monospace fallback)  
-**Body Font:** Azeret Mono (with monospace fallback)  
-**Label/Mono Font:** Azeret Mono; the interface uses one family.
+**Display Font:** Azeret Mono 700 (with monospace fallback)
+**Body Font:** Montserrat 400–700 (with sans-serif fallback)
 
-**Character:** A compact code-adjacent mono voice lends the page a maintainer's precision. Larger headings and restrained uppercase labels bring hierarchy; descriptions retain generous line height for recruiter readability.
+**Character:** A blunt monospaced display voice for the name and the two section titles, set against a calm geometric sans for reading. Small uppercase labels with wide tracking echo the engraved feel of the emblem.
 
 ### Hierarchy
-- **Display** (700, `4.5rem`, line `0.98`): name; steps down to `4rem`, `3.5rem`, and `3rem` at narrower breakpoints.
-- **Headline** (700, `2rem`, line `1.15`): project section title; reduces to `1.5rem` on narrow mobile.
-- **Profile heading** (700, `1.55rem`, line `1.2`): profile section; reduces to `1.35rem` on narrow mobile.
-- **Title** (700, `0.94rem`, line `1.45`): project titles beneath their preview.
-- **Body** (400, `0.88rem`, line `1.75`): hero introduction; project details use `0.72rem` at `1.7` line height, and profile copy uses `0.78rem` at `1.8`.
-- **Label** (700, `0.78rem`): developer role; navigation and tile controls use compact mono labels.
+- **Display** (700, `4.5rem`, line `0.98`, uppercase): the name, on two lines. Steps down to `4rem`, `3.5rem` and `3rem` at the three breakpoints.
+- **Headline** (700, `2rem`, line `1.15`): "Mes projets" and "Parcours"; `1.6rem` below `720px`.
+- **Title** (700, `1.02rem`, line `1.4`): project names.
+- **Body** (400, `1rem`, line `1.7`): hero intro (max `56ch`) and profile text (max `68ch`, line `1.8`). Project details use `0.86rem` at `1.65`.
+- **Role** (600, `0.8rem`, tracking `0.22em`, uppercase, cyan): the line under the name.
+- **Label** (600–700, `0.72rem`–`0.76rem`, tracking `0.14em`–`0.16em`, uppercase): navigation, buttons, text links, topics strip, tile disclosure.
+
+**The Two Voices Rule.** Azeret Mono is for the name, the section titles and the project placeholder letter. Everything else is Montserrat.
 
 ## Layout
 
-The page uses a centered content width capped at `1320px`. The hero remains a compact 5/7 split on wide screens, balances to 6/6 at tablet widths, and stacks below `720px`.
+Content is centred in a column capped at `1320px`, with `32px` gutters on desktop, `20px` below `720px` and `18px` below `520px`.
 
-Projects form one horizontally scrollable, snap-aligned rail. Tiles preserve their real `16:10` screenshots; desktop cards cap at `390px`, tablet cards at `370px`, and mobile cards use at most `82vw` so the next tile peeks into view. The rail itself scrolls; the document never overflows horizontally. Side gutters are `32px` desktop, `20px` tablet, and `18px` narrow mobile.
+The hero is a two-column grid: text on the left (7 parts), the eye on the right (5 parts), vertically centred. It becomes 3/2 below `980px`. Below `720px` it stacks, and the eye moves above the name at a fixed `230px` height. A full-width topics strip closes the hero between two cyan rules.
+
+Projects sit in one horizontal, snap-aligned rail; only the rail scrolls, never the document. Tiles are `min(32vw, 390px)` wide, then `min(46vw, 370px)`, then `min(82vw, 340px)` on phones so the next tile peeks in. Sections breathe with `56px` of vertical padding (`40px` on mobile).
 
 ## Elevation & Depth
 
-The catalog is flat, with no shadows, gradients, or glass. Depth comes from image-to-surface contrast and small focus/hover elevation. When a tile is hovered or contains keyboard focus, it lifts slightly and neighboring tiles quiet; the project remains visible by default and reduced-motion users get immediate state changes.
+The interface is flat: no box shadows, no glass, no panels. Depth exists in exactly one place, the eye, which is built as a small 3D object: the emblem tilts toward the gaze, and the iris slides and turns on the eyeball. A radial shadow inside the socket blends the globe into the emblem.
+
+**The Flat Interface Rule.** Shadows and gradients belong to the eye only. Tiles react to hover and focus with a `4px` lift and a cyan border, while their neighbours dim to 48 % opacity.
 
 ## Shapes
 
-Project tiles use a restrained `4px` radius; controls and navigation stay square. A thin neutral rule separates quiet tiles, and the cyan outline marks only the active focus state. Keep project artwork rectangular and uncropped beyond its real source aspect ratio.
+Corners are almost square (`2px`) on buttons and tiles. Borders are single hairlines. The only curved form is the eye socket, a perfect circle. The recurring ornament is a small four-point star between two hairlines that draw outward when the section appears; it sits under each section title.
 
 ## Components
 
 ### Buttons
-- **Shape:** square-cornered outline (`0px`).
-- **Primary:** transparent screen ground, paper-white text, `42px` minimum height, and `12px` horizontal padding.
-- **Hover / Focus:** hover fills with focus cyan and switches text to screen black; keyboard focus uses a visible `2px` cyan outline with `3px` offset.
-- **Text link:** unboxed paper-white text; cyan underline and text on hover.
+- **Shape:** near-square outline (`2px`).
+- **Primary:** transparent ground, cyan `1px` border, paper text, `46px` minimum height, `18px` horizontal padding, uppercase label.
+- **Hover / Focus:** hover fills with cyan and turns the text ink; keyboard focus shows a `2px` cyan outline offset by `3px`.
+- **Text link:** unboxed uppercase label; cyan text and underline on hover.
 
 ### Cards / Containers
-- **Corner Style:** restrained `4px` radius.
-- **Background:** work surface on the screen-black page ground.
-- **Shadow Strategy:** no shadows; imagery and hairline rules separate tiles.
-- **Internal Padding:** `14px` desktop, `12px` tablet, and `10px` narrow mobile.
-- **Behavior:** artwork and title stay visible; focus or hover lifts the tile and quiets adjacent tiles. Native details opens project metadata in place.
+- **Corner Style:** `2px`.
+- **Background:** surface on the ink ground, raised surface behind the media.
+- **Shadow Strategy:** none; see the Flat Interface Rule.
+- **Border:** quiet line at rest, cyan on hover or focus.
+- **Internal Padding:** `14px 16px`, `12px 14px` on phones.
+- **Behavior:** thumbnail (`16:10`) and title are always visible. A native `details` element reveals the description, stack and links, each line wiping in over `180ms`.
 
 ### Navigation
-- **Style:** compact uppercase Azeret Mono in a `68px` masthead, reducing to `58px` on narrow mobile.
-- **States:** paper-white at rest; cyan text and underline on hover; cyan outline on keyboard focus.
-- **Mobile:** keep Projects and Contact on one row with tightened spacing.
+- **Style:** `76px` header (`66px` on mobile) with the cyan YS monogram and a small uppercase label on the left, two uppercase links on the right.
+- **States:** paper at rest, cyan text and underline on hover, cyan outline on keyboard focus.
+- **Mobile:** both links stay on one row with tighter spacing.
 
-### Project Catalog Tile
-- Use only the database-backed thumbnail and title for the resting tile.
-- The native `details` disclosure reveals the real description, technology stack, and available GitHub/demo links.
-- Keep the gallery as a keyboard-focusable horizontal region with snap-aligned tiles.
-- Loading, error, and empty states use the same dark ground, quiet rule, and readable text.
+### Hero Eye (signature component)
+The emblem is a still image with a living eye, in `components/homepage/HeroEye.tsx`.
+- **Gaze:** the eye follows the pointer; the emblem tilts slightly toward it (up to `9°` and `7°`). Without pointer activity for `2.6s`, or on touch, it looks around by itself: it fixates a point, drifts very slightly, then jumps elsewhere.
+- **Eyeball:** the iris and the textured globe behind it move together like one sphere, and the iris turns away as it nears the edge. The iris is never scaled up.
+- **Fire:** cyan flames rise behind the emblem and the iris collar shimmers. Both run at a constant speed and never react to the pointer.
+- **Fallbacks:** with reduced motion everything is still; without WebGL the eye still tracks, only the fire is missing. The loop pauses when the eye is off screen or the tab is hidden.
+
+### Ornament
+Four-point cyan star (`16px`) between two cyan hairlines, placed under "Mes projets" and "Parcours".
+
+### Footer
+Cyan rule on top, the YS monogram at `112px` (`92px` on phones) with contact links, then a quiet rule and the copyright line.
 
 ## Do's and Don'ts
 
-- **Do** put genuine project artwork and titles before extended profile copy.
-- **Do** preserve the real description, stack, demo URL, and repository URL for each project.
-- **Do** keep horizontal scrolling within the labeled gallery and make tile controls keyboard accessible.
-- **Do** use cyan only for focus, active links, and selected-tile treatment.
-- **Don't** use green, glowing edges, fake ratings, popularity badges, or recommendation claims.
-- **Don't** invent commits, branches, checks, security output, or terminal transcripts.
-- **Don't** hide project names or rely on hover alone to reveal the page's primary content.
+### Do:
+- **Do** keep cyan (`#4ac6d9`) as the only accent, for emphasis and interaction.
+- **Do** change appearance through the semantic classes in `app/catalog.css`.
+- **Do** keep the eye's effects at constant speed, independent of the pointer.
+- **Do** keep the project rail keyboard-focusable and the page free of horizontal overflow.
+- **Do** show real project thumbnails, descriptions, stacks and links.
+
+### Don't:
+- **Don't** scale the iris or change the size of the eye when it moves.
+- **Don't** leave an empty or black area behind the iris when it looks away.
+- **Don't** use gothic or blackletter type for text.
+- **Don't** add the red version of the emblem, a second accent colour, or green.
+- **Don't** add shadows, gradients or glass effects outside the eye.
+- **Don't** invent ratings, activity, terminal output or project results.

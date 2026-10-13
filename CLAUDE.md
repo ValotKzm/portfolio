@@ -23,7 +23,7 @@ pnpm db:push      # pousse le schéma sans migration — modifie la base, demand
 
 ## Architecture
 
-Site d'une seule page : `app/page.tsx` rend `components/homepage/HomePage.tsx`, et `app/layout.tsx` ajoute le `Footer` (qui porte l'ancre `#contact`) et la police Azeret Mono exposée via la variable `--font-ui`.
+Site d'une seule page : `app/page.tsx` rend `components/homepage/HomePage.tsx`, et `app/layout.tsx` ajoute le `Footer` (qui porte l'ancre `#contact`) et les deux polices : Montserrat (`--font-ui`, texte courant) et Azeret Mono 700 (`--font-display`, nom et titres de section).
 
 ### Flux de données des projets
 
@@ -47,6 +47,7 @@ Les miniatures sont des URL arbitraires stockées en base : `ProjectCard` utilis
 
 ### Design et contenu
 
-- `DESIGN.md` est la référence du système visuel (« Project Catalog Wall ») : fond neutre sombre, Azeret Mono partout, cyan `#4ac6d9` comme **seul** accent (focus, liens actifs, tuile sélectionnée), aucun vert, pas d'ombres, de dégradés ni d'effet de verre, tuiles à rayon `4px` et contrôles à angles droits. Le consulter avant toute modification d'interface.
+- `DESIGN.md` est la référence du système visuel (« The Watchful Sigil ») : fond noir bleuté, cyan `#4ac6d9` comme **seul** accent, Azeret Mono pour les titres et Montserrat pour le texte, interface plate (ombres et dégradés réservés à l'œil du hero), rayon de `2px`. Le consulter avant toute modification d'interface.
+- `NOTES.md` regroupe les notes de reprise : pièges connus (CSS figée en développement), règles à respecter et fichiers hors dépôt.
 - `PRODUCT.md` décrit le public (recruteurs, recherche d'alternance) et impose de ne rien inventer : pas de fausses notes, d'activité de dépôt, de sorties de terminal ni de résultats de projets non confirmés.
 - La galerie de projets est un rail horizontal à défilement aimanté, focalisable au clavier ; seul le rail défile, jamais le document.
