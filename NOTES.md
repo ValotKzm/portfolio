@@ -24,23 +24,7 @@ Notes pratiques pour reprendre le travail sur le portfolio. Le design est décri
 
 ## Hors dépôt
 
-Des fichiers liés au projet se trouvent sur le bureau, pas dans le dépôt.
-
-Dans le dossier `Oeil/`, les overlays pour OBS :
-
-- `oeil-overlay.html` : première version, avec l'ancien mouvement de l'œil.
-- `oeil-overlay-v2.html` : le mouvement actuel de l'œil ; la structure s'incline avec le regard.
-- `oeil-overlay-v3.html` : le même, avec l'option `?structure=` ; sans option, la structure reste fixe.
-- `readme.md` : rappel des options d'adresse.
-
-À la racine du bureau :
-
-- `oeil-overlay-v2.html` : une autre copie de la v2, différente de celle du dossier `Oeil/` : elle accepte `?structure=` et, sans option, la structure s'incline.
-- `logo-ys-cyan.png` et `logo-ys-rouge.png` : monogramme sur fond transparent.
-
-Les overlays sont autonomes (images et shaders intégrés). Ils s'ajoutent dans OBS comme source Navigateur, en « Fichier local », taille conseillée 700 × 800. Options d'adresse : `?souris=1` et `?fond=0a0f14` partout, `?structure=0` ou `?structure=1` seulement là où c'est indiqué. Ils n'ont été testés que dans un navigateur, pas dans OBS.
-
-Ils ne se mettent pas à jour quand le site change : si l'œil du site évolue, il faut les régénérer à partir de `HeroEye.tsx` et des images de `public/brand/`.
+Sur le bureau, pas dans le dépôt : `logo-ys-cyan.png` et `logo-ys-rouge.png`, le monogramme sur fond transparent.
 
 ## Pistes ouvertes
 

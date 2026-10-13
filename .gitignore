@@ -25,6 +25,8 @@
 *.pem
 .impeccable/
 .local/
+.claude/
+skills-lock.json
 
 # debug
 npm-debug.log*
