@@ -205,7 +205,10 @@ export const HeroEye = () => {
 
         const look = { x: 0, y: 0 };
         const target = { x: 0, y: 0 };
+        const gaze = { x: 0, y: 0 };
+        let nextGaze = 0;
         let lastPointer = -Infinity;
+        let lastFrame = 0;
 
         const onPointerMove = (event: PointerEvent) => {
             if (event.pointerType === "touch") return;
@@ -227,14 +230,29 @@ export const HeroEye = () => {
         const loop = (now: number) => {
             const time = (now - start) / 1000;
 
-            // Sans curseur récent (ou au doigt), le regard se promène lentement.
-            if (now - lastPointer > 2600) {
-                target.x = Math.sin(time * 0.43) * 0.55 + Math.sin(time * 1.1) * 0.12;
-                target.y = Math.sin(time * 0.31 + 1.3) * 0.3;
+            const delta = Math.min(0.05, lastFrame ? (now - lastFrame) / 1000 : 0.016);
+            lastFrame = now;
+            const idle = now - lastPointer > 2600;
+
+            // Sans curseur récent (ou au doigt), le regard fixe un point puis saute ailleurs, par saccades.
+            if (idle) {
+                if (time > nextGaze) {
+                    const centred = Math.random() < 0.3;
+                    const angle = Math.random() * Math.PI * 2;
+                    const reach = centred ? Math.random() * 0.2 : 0.4 + Math.random() * 0.5;
+                    gaze.x = Math.cos(angle) * reach;
+                    gaze.y = Math.sin(angle) * reach * 0.6;
+                    nextGaze = time + 0.8 + Math.random() * 3;
+                }
+                // Un œil ne reste jamais parfaitement immobile : légère dérive pendant la fixation.
+                target.x = gaze.x + Math.sin(time * 0.9) * 0.03;
+                target.y = gaze.y + Math.sin(time * 0.7 + 1.3) * 0.025;
             }
 
-            look.x += (target.x - look.x) * 0.11;
-            look.y += (target.y - look.y) * 0.11;
+            // Saccade vive vers un nouveau point, poursuite plus souple derrière le curseur.
+            const ease = 1 - Math.exp(-delta * (idle ? 20 : 13));
+            look.x += (target.x - look.x) * ease;
+            look.y += (target.y - look.y) * ease;
             root.style.setProperty("--look-x", look.x.toFixed(3));
             root.style.setProperty("--look-y", look.y.toFixed(3));
 
@@ -248,6 +266,7 @@ export const HeroEye = () => {
 
         const sync = () => {
             cancelAnimationFrame(frame);
+            lastFrame = 0;
             if (visible && !document.hidden) frame = requestAnimationFrame(loop);
         };
         const observer = new IntersectionObserver(([entry]) => {
