@@ -16,7 +16,7 @@ Present Yannick's projects and make it easy for recruiters to get in touch about
 
 ## Positioning
 
-Undecided. No distinctive mechanism or positioning beyond a personal developer portfolio has been confirmed.
+A dual background: a master's degree in Natural Language Processing (Traitement Automatique des Langues) combined with ongoing full-stack developer training. This pairing is what sets the profile apart from other junior full-stack developers and makes it relevant for data and AI applications.
 
 ## Operating Context
 
@@ -27,8 +27,8 @@ Recruiters review the profile and projects, then contact Yannick. The current si
 - The existing implementation uses Next.js 16, React 19, TypeScript, and Tailwind CSS 4.
 - Project records are queried from PostgreSQL through Neon and Drizzle ORM.
 - The current interface is in French.
-- The homepage currently describes a full-stack developer profile with a backend and NLP focus, and says the owner is seeking an apprenticeship. Confirm these profile details before treating them as durable product facts.
-- Specific availability, location, apprenticeship schedule, and other constraints have not been established.
+- Confirmed profile: Yannick holds a master's degree in Natural Language Processing, is currently in full-stack developer training, specializes in backend and NLP, and is seeking an apprenticeship in full-stack, backend, or frontend development, with a particular interest in data and AI applications.
+- Apprenticeship start date, duration, school/company schedule, location, and remote-work preferences are deliberately not recorded. Do not state or imply any of them.
 
 ## Evidence on Hand
 
