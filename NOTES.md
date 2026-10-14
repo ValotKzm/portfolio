@@ -8,6 +8,8 @@ Notes pratiques pour reprendre le travail sur le portfolio. Le design est décri
 - Tout est sur `main`, qui est la seule branche, en local comme sur GitHub.
 - L'œil (`components/homepage/HeroEye.tsx`) suit la souris, bouge par saccades quand elle est inactive, et la structure s'incline avec le regard.
 - Depuis le 14 octobre 2026, le hero s'ouvre comme une paupière au chargement et se referme au défilement (`.hero-lid` dans `app/catalog.css`, durée réglée par `--lid`). Choisie en mode live d'Impeccable parmi trois variantes.
+- L'icône d'onglet est `app/icon.png` (convention de fichier Next, aucune déclaration dans `metadata`) : le monogramme YS recadré sur les lettres, sur fond encre `#0a0f14`, générée avec `sharp` depuis `logo-ys-cyan.png` du bureau. Il n'y a plus de `favicon.ico`.
+- Les projets s'affichent par `id` croissant, c'est-à-dire dans l'ordre d'ajout dans Neon (`orderBy(asc(projects.id))` dans `getProject()`). Pour changer l'ordre, il faut changer les `id` ou ajouter une colonne de position (migration, donc décision explicite).
 
 ## Pièges connus
 
