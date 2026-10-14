@@ -125,7 +125,7 @@ The look comes from a personal graphic charter (a gothic emblem and monogram), r
 
 **Key Characteristics:**
 - Blue-black ground, soft white text, cyan as the single accent.
-- One animated signature piece (the eye) and otherwise very little motion.
+- One animated signature piece (the eye), one hero entrance (the eyelid) and otherwise very little motion.
 - Azeret Mono for the name and section titles, Montserrat for everything that is read.
 - Thin rules and a small star ornament instead of boxes, shadows or panels.
 - Real project previews, stacks and links; nothing invented.
@@ -214,6 +214,13 @@ The emblem is a still image with a living eye, in `components/homepage/HeroEye.t
 - **Eyeball:** the iris and the textured globe behind it move together like one sphere, and the iris turns away as it nears the edge. The iris is never scaled up.
 - **Fire:** cyan flames rise behind the emblem and the iris collar shimmers. Both run at a constant speed and never react to the pointer.
 - **Fallbacks:** with reduced motion everything is still; without WebGL the eye still tracks, only the fire is missing. The loop pauses when the eye is off screen or the tab is hidden.
+
+### Hero Opening ("the eyelid")
+The one entrance on the page, in `app/catalog.css` (`.hero-lid`), timed by `--lid: 1.3s`.
+- **Opening:** a cyan hairline draws across the middle of the hero, then the hero opens from that line like an eyelid. The emblem wakes (slightly larger and brighter, then settles), the name rises line by line, then the role, intro and actions sharpen in.
+- **Closing:** as the hero scrolls out, the eyelid closes again (scroll-driven, `animation-timeline: view()`; browsers without it simply keep it open).
+- **Clip:** the open clip extends past the block so the eye's flames are never cut.
+- **Fallbacks:** with reduced motion the hero is shown open, with no animation.
 
 ### Ornament
 Four-point cyan star (`16px`) between two cyan hairlines, placed under "Mes projets" and "Parcours".
