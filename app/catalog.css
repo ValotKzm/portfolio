@@ -323,6 +323,126 @@ summary:focus-visible,
   opacity: 1;
 }
 
+/* Paupière : un filet cyan se trace, le hero s'ouvre depuis ce trait, le nom monte ligne à ligne.
+   Elle se referme quand le hero quitte l'écran (navigateurs qui gèrent view()).
+   Ouverte, la découpe déborde du bloc pour ne pas rogner les flammes de l'œil. */
+@keyframes hero-seam {
+  from {
+    scale: 0 1;
+    opacity: 1;
+  }
+  55% {
+    scale: 1 1;
+    opacity: 1;
+  }
+  to {
+    scale: 1 1;
+    opacity: 0;
+  }
+}
+
+@keyframes hero-lid-open {
+  from {
+    clip-path: inset(50% -15%);
+  }
+  to {
+    clip-path: inset(-25% -15%);
+  }
+}
+
+@keyframes hero-lid-close {
+  from {
+    clip-path: inset(-25% -15%);
+  }
+  to {
+    clip-path: inset(50% -15%);
+  }
+}
+
+@keyframes hero-line-rise {
+  from {
+    translate: 0 105%;
+  }
+}
+
+@keyframes hero-settle {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    translate: 0 14px;
+  }
+}
+
+@keyframes hero-eye-wake {
+  from {
+    scale: 1.1;
+    filter: brightness(2.2);
+  }
+}
+
+.hero-lid {
+  --lid: 1.3s;
+  position: relative;
+}
+
+.hero-lid::before {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  animation: hero-seam calc(var(--lid) * 0.6) cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+.hero-lid > .hero-inner {
+  animation: hero-lid-open calc(var(--lid) * 0.75) cubic-bezier(0.7, 0, 0.2, 1) calc(var(--lid) * 0.28) both;
+}
+
+.hero-copy h1 > span {
+  display: block;
+  overflow: hidden;
+}
+
+.hero-line {
+  display: block;
+  animation: hero-line-rise calc(var(--lid) * 0.6) var(--ease-out) calc(var(--lid) * 0.55) both;
+}
+
+.hero-copy h1 > span:last-child .hero-line {
+  animation-delay: calc(var(--lid) * 0.66);
+}
+
+.hero-lid .hero-role,
+.hero-lid .hero-intro,
+.hero-lid .hero-actions {
+  animation: hero-settle calc(var(--lid) * 0.7) var(--ease-out) calc(var(--lid) * 0.82) both;
+}
+
+.hero-lid .hero-intro {
+  animation-delay: calc(var(--lid) * 0.92);
+}
+
+.hero-lid .hero-actions {
+  animation-delay: calc(var(--lid) * 1.02);
+}
+
+.hero-lid .hero-eye {
+  animation: hero-eye-wake calc(var(--lid) * 1.1) var(--ease-out) calc(var(--lid) * 0.28) both;
+}
+
+@supports (animation-timeline: view()) {
+  .hero-lid {
+    animation: hero-lid-close linear both;
+    animation-timeline: view();
+    animation-range: exit 0% exit 100%;
+  }
+}
+
 .hero-topics {
   border-block: 1px solid var(--line);
 }

@@ -25,26 +25,28 @@ export default function HomePage() {
                     </nav>
                 </header>
 
-                <div className="hero-inner" id="top">
-                    <div className="hero-copy">
-                        <h1 id="hero-title">
-                            <span>Yannick</span>
-                            <span>Souza</span>
-                        </h1>
-                        <p className="hero-role">Développeur Fullstack – Spécialisé Backend &amp; NLP</p>
-                        <p className="hero-intro">
-                            Master en Traitement Automatique des Langues, actuellement en formation développeur fullstack, à la recherche d’une alternance.
-                        </p>
-                        <div className="hero-actions">
-                            <a className="button-primary" href="#projects">
-                                Voir mes projets <ArrowDownRight size={18} aria-hidden="true" />
-                            </a>
-                            <a className="text-link" href="mailto:yannick.souza@hotmail.com">
-                                Me contacter <ArrowUpRight size={16} aria-hidden="true" />
-                            </a>
+                <div className="hero-lid">
+                    <div className="hero-inner" id="top">
+                        <div className="hero-copy">
+                            <h1 id="hero-title">
+                                <span><span className="hero-line">Yannick</span></span>
+                                <span><span className="hero-line">Souza</span></span>
+                            </h1>
+                            <p className="hero-role">Développeur Fullstack – Spécialisé Backend &amp; NLP</p>
+                            <p className="hero-intro">
+                                Master en Traitement Automatique des Langues, actuellement en formation développeur fullstack, à la recherche d’une alternance.
+                            </p>
+                            <div className="hero-actions">
+                                <a className="button-primary" href="#projects">
+                                    Voir mes projets <ArrowDownRight size={18} aria-hidden="true" />
+                                </a>
+                                <a className="text-link" href="mailto:yannick.souza@hotmail.com">
+                                    Me contacter <ArrowUpRight size={16} aria-hidden="true" />
+                                </a>
+                            </div>
                         </div>
+                        <HeroEye />
                     </div>
-                    <HeroEye />
                 </div>
 
                 <div className="hero-topics" aria-label="Domaines d’intérêt">
