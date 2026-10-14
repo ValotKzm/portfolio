@@ -31,7 +31,7 @@ Les projets affichés sont la seule donnée dynamique et viennent de la table `p
 
 1. `lib/db/schema.ts` — table `projects` (Drizzle, `pg-core`). `stack` est une simple chaîne séparée par des virgules, pas un tableau.
 2. `lib/db/drizzle.ts` — client `db` sur le driver `neon-http`.
-3. `app/actions/getProjects.ts` — server action `getProject()` (nom au singulier, renvoie tous les projets triés par `id` croissant, l'ordre d'ajout ; ne pas retirer ce tri).
+3. `app/actions/getProjects.ts` — server action `getProject()` (nom au singulier, renvoie tous les projets triés par `id` décroissant, le plus récent en premier ; ne pas retirer ce tri).
 4. `components/homepage/DisplayProjects.tsx` — composant **client** qui appelle la server action dans un `useEffect` et gère les états chargement / erreur (avec bouton « Réessayer ») / vide.
 5. `components/homepage/ProjectCard.tsx` — tuile ; les détails s'ouvrent avec un élément natif `<details>`.
 
